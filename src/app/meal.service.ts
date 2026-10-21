@@ -14,7 +14,9 @@ export class MealService {
       `${this.apiUrl}search.php?s=${searchTerm}`,
     );
   }
-  getMealById(id: number): Observable<Meal> {
-    return this.httpClient.get<Meal>(`${this.apiUrl}lookup.php?i=${id}`);
+  getMealById(id: number): Observable<{ meals: Meal[] }> {
+    return this.httpClient.get<{ meals: Meal[] }>(
+      `${this.apiUrl}lookup.php?i=${id}`,
+    );
   }
 }
