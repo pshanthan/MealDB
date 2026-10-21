@@ -13,9 +13,11 @@ export class ListComponent implements OnInit {
   constructor(private mealService: MealService) {}
   meals: Meal[] = [];
   ngOnInit(): void {
-    this.getMeals();
+    this.getMeals('chicken');
   }
-  getMeals() {
-    this.mealService.getMeal().subscribe((m) => (this.meals = m));
+  getMeals(term: string) {
+    this.mealService
+      .getMeal('chicken')
+      .subscribe((m) => (this.meals = m.meals));
   }
 }
