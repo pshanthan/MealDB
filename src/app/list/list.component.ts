@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MealService } from '../meal.service';
 import { Meal } from '../Models/Meal';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-list',
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
