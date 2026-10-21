@@ -1,5 +1,6 @@
 <div>
-  <input (searchTerm) />
+  <input #term />
+  <button (click)="getMeals(term.value)">SEARCH</button>
 </div>
 <div *ngFor="let m of meals">
   <app-card [meal]="m"></app-card>
