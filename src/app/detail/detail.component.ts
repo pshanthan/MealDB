@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MealService } from '../meal.service';
 import { ActivatedRoute } from '@angular/router';
 import { Meal } from '../Models/Meal';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
 })
