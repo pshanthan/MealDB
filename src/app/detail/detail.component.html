@@ -1,1 +1,7 @@
-<p>detail works!</p>
+<div *ngIf="meal">
+  <img [src]="meal.strMealThumb" />
+  {{ meal.strMeal }}
+  {{ meal.strArea }}
+  {{ meal.strCategory }}
+  {{ meal.strInstructions }}
+</div>
