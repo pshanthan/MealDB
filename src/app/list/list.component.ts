@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MealService } from '../meal.service';
 import { Meal } from '../Models/Meal';
 import { CommonModule } from '@angular/common';
@@ -9,9 +9,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
   constructor(private mealService: MealService) {}
   meals: Meal[] = [];
+  ngOnInit(): void {
+    this.getMeals();
+  }
   getMeals() {
     this.mealService.getMeal().subscribe((m) => (this.meals = m));
   }
