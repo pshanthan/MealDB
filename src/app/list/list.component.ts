@@ -13,7 +13,6 @@ import { CardComponent } from '../card/card.component';
 export class ListComponent {
   constructor(private mealService: MealService) {}
   meals: Meal[] = [];
-
   getMeals(term: string) {
     this.mealService.getMeal(term).subscribe((m) => (this.meals = m.meals));
   }
