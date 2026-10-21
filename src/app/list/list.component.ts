@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   meals: Meal[] = [];
   ngOnInit(): void {
     if (this.searchTerm) {
-      this.getMeals('chicken');
+      this.getMeals(this.searchTerm);
     }
   }
   getMeals(term: string) {
