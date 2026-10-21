@@ -16,8 +16,6 @@ export class ListComponent implements OnInit {
     this.getMeals('chicken');
   }
   getMeals(term: string) {
-    this.mealService
-      .getMeal('chicken')
-      .subscribe((m) => (this.meals = m.meals));
+    this.mealService.getMeal(term).subscribe((m) => (this.meals = m.meals));
   }
 }
