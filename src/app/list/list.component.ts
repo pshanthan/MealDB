@@ -12,7 +12,6 @@ import { CardComponent } from '../card/card.component';
 })
 export class ListComponent {
   constructor(private mealService: MealService) {}
-  searchTerm: string | null = null;
   meals: Meal[] = [];
 
   getMeals(term: string) {
