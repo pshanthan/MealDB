@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Meal } from './Models/Meal';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MealService {
-
-  constructor() { }
+  constructor(private httpClient: HttpClient) {}
+  apiUrl = 'https://www.themealdb.com/api/json/v1/1/';
+  getMeal(): Observable<Meal[]> {
+    return this.httpClient.get<Meal[]>(this.apiUrl);
+  }
 }
