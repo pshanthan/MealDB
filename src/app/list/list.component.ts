@@ -12,6 +12,7 @@ import { CardComponent } from '../card/card.component';
 })
 export class ListComponent implements OnInit {
   constructor(private mealService: MealService) {}
+  searchTerm: string | null = null;
   meals: Meal[] = [];
   ngOnInit(): void {
     this.getMeals('chicken');
