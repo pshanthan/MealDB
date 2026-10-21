@@ -12,4 +12,7 @@ import { CommonModule } from '@angular/common';
 export class ListComponent {
   constructor(private mealService: MealService) {}
   meals: Meal[] = [];
+  getMeals() {
+    this.mealService.getMeal().subscribe((m) => (this.meals = m));
+  }
 }
